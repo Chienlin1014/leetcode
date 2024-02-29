@@ -1,4 +1,4 @@
-package Medium;
+package solved.medium;
 
 import java.math.BigInteger;
 

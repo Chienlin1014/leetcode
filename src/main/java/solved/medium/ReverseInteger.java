@@ -1,16 +1,14 @@
-package Medium;
+package solved.medium;
 
 import java.math.BigInteger;
 
 public class ReverseInteger {
     public int reverse(int x) {
         String xString = String.valueOf(x);
-        int maximum = (int) (Math.pow(2, 31) - 1);
-        int minimum = (int) Math.pow(-2, 31);
+        int maximum = Integer.MAX_VALUE;
+        int minimum = Integer.MIN_VALUE;
         if (x < 0) {
-            xString = xString.substring(1);
-            xString = new StringBuilder(xString).reverse().toString();
-            xString = "-" + xString;
+            xString ="-" + new StringBuilder(xString.substring(1)).reverse();
         } else {
             xString = new StringBuilder(xString).reverse().toString();
         }
@@ -25,7 +23,7 @@ public class ReverseInteger {
         long reverseX = 0;
         while (x != 0) {
             reverseX = (reverseX * 10) + (x % 10); //reverseX進一位並且將x除以10餘數加入
-            x /= 10; //最後一次是0/10所以這邊會是斷點
+            x /= 10; //最後一次是X0/10所以這邊會是斷點
             if (reverseX > Integer.MAX_VALUE || reverseX < Integer.MIN_VALUE) {
                 return 0;
             }
@@ -33,11 +31,4 @@ public class ReverseInteger {
         return (int) reverseX;
     }
 
-
-    public static void main(String[] args) {
-        int pow = -2147483648;
-        String s = String.valueOf(pow);
-        System.out.println(s.substring(1, s.length()));
-
-    }
 }
