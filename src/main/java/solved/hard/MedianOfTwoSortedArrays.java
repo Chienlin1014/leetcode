@@ -16,19 +16,4 @@ public class MedianOfTwoSortedArrays {
             return array[length/2];
         }
     }
-
-    public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
-        list.add("5");
-        list.add("4");
-        list.forEach(System.out::print);
-    }
-    static void aMethod(StringBuilder sf1,StringBuilder sf2){
-        sf1.append(sf2);
-        sf2 = sf1;
-
-    }
 }
